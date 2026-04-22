@@ -4,7 +4,7 @@ A full-stack e-commerce web app with a React + Vite frontend and a Node.js/Expre
 
 ## Run locally
 
-- `cd client && npm install && npm run dev`
+- `cd client && npm install && npm run start`
 - `cd server && npm install && npm start`
 
 ## What Changed
