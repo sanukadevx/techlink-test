@@ -93,6 +93,7 @@ export const Brands = () => {
 export const BestSellers = () => {
   const navigate = useNavigate();
 
+  // 3rd task already done by adding data array to best sellers section.
   const data = [
     { src: "/GenInfo/adidas.jpg", name: "Adidas", to: "/search/adidas" },
     { src: "/GenInfo/nike.png", name: "Nike", to: "/search/nike" },
