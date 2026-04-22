@@ -1,5 +1,5 @@
 import express from "express";
-import mongoose from "mongoose";
+import mongoose, { mongo } from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 import router from "./routes/productRoutes.js";
@@ -15,8 +15,14 @@ app.use(express.json());
 const PORT = process.env.PORT || 5000;
 
 const connectDB = async () => {
+  const mongoURI = process.env.MONGO_URI;
+
+  if (!mongoURI) {
+    throw new Error("MONGO_URI is not defined in environment variables.");
+  }
+
   try {
-    await mongoose.connect(process.env.MONGO_URI);
+    await mongoose.connect(mongoURI);
     console.log(`App is connected to the database.`);
   } catch (error) {
     console.error(`Error connecting to DB: ${error.message}`);
